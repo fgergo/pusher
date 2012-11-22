@@ -16,7 +16,7 @@
 # Description
 #
 # push.sh transfers and stores data received on
-# standard input in the following tree:
+# standard input in:
 # 	~/pushed/YYYY/MMDD/0/0.tar.gz
 # where YYYY/MMDD/ represents the current date,
 # similar to the plan9 dump filesystem.
