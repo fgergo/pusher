@@ -124,12 +124,12 @@ fi
 # Remove write access to transferred file and directory
 chmod a-w $try_file.$pushed_file_suffix
 if [ "$?" -ne "0" ]; then
-	die "could not remove write access to $try_file"
+	die "could not remove write access on $try_file"
 fi
 
 chmod a-w $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/
 if [ "$?" -ne "0" ]; then
-	die "could not remove write access to $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/"
+	die "could not remove write access on $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/"
 fi
 
 # Report sha256sum of transferred data to support integrity check after the transfer.
