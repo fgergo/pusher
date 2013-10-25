@@ -8,7 +8,7 @@
 # on local fs:
 #	tar cf - myfiletree|gzip|push.sh
 # on Linux using ssh between remote file trees:
-#	tar cf - myfiletree|gzip|ssh user@host "`cat push.sh`"
+#	tar cf - myfiletree|gzip|ssh user@host "`cat ~/bin/push.sh`"
 # on Windows using plink (e.g. with saved session information) between remote file trees:
 #	tar cf - myfiletree|gzip|plink -batch -load mysavedputtysession -m push.sh
 # on Plan9: please reconsider.
