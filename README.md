@@ -6,13 +6,16 @@ Plan9 dump file system. For references please google plan9 dump file system.
 
 ### Usage
 on __local filesystem__:
-> tar cf - myfiletree|gzip|push.sh
+
+``tar cf - myfiletree|gzip|push.sh``
 
 on __Linux__ using ssh between remote file trees:
-> tar cf - myfiletree|gzip|ssh user@host "`cat ~/bin/push.sh`"
+
+``tar cf - myfiletree|gzip|ssh user@host "`cat ~/bin/push.sh`"``
 
 on __Windows__ using plink (e.g. with saved session information) between remote file trees:
-> tar cf - myfiletree|gzip|plink -batch -load mysavedputtysession -m push.sh
+
+``tar cf - myfiletree|gzip|plink -batch -load mysavedputtysession -m push.sh``
 
 on __Plan9__: please reconsider.
 
