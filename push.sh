@@ -89,14 +89,13 @@ if [ "$?" -ne "0" ]; then
 	die "error: could not walk to $pushed_home/$pushed_root/$yyyy/$mmdd"
 fi
 
-# Begin critical section
-
 # Create $pushed_file directory, repeat until created,
 # or if tried for more than $max_pushes times.
-
 for ((i=0; i<=$max_pushes; i++))
 do
 	try_file=$i
+	# TODO: mkdir should be protected better.
+	# most mkdir have a race.
 	mkdir $try_file 2> /dev/null
 	if [ "$?" -eq "0" ]; then
 		break
@@ -106,8 +105,6 @@ cd $try_file
 if [ "$?" -ne "0" ]; then
 	die "error: could not walk to $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/"
 fi
-
-# End critical section
 
 # Store data read from stdin
 cat - > $try_file.$pushed_file_suffix.part
