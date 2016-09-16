@@ -86,7 +86,7 @@ fi
 mkdir $mmdd 2> /dev/null
 cd $mmdd
 if [ "$?" -ne "0" ]; then
-	die "error: could not walk to $pushed_home/$pushed_root/$yyyy/$mmdd"
+	die "could not walk to $pushed_home/$pushed_root/$yyyy/$mmdd"
 fi
 
 # Create $pushed_file directory, repeat until created,
@@ -103,13 +103,13 @@ do
 done
 cd $try_file
 if [ "$?" -ne "0" ]; then
-	die "error: could not walk to $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/"
+	die "could not walk to $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/"
 fi
 
 # Store data read from stdin
 cat - > $try_file.$pushed_file_suffix.part
 if [ "$?" -ne "0" ]; then
-	die "error: could not transfer data to $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/$try_file.$pushed_file_suffix.part"
+	die "could not transfer data to $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/$try_file.$pushed_file_suffix.part"
 fi
 
 # Remove .part suffix
@@ -129,5 +129,5 @@ if [ "$?" -ne "0" ]; then
 	die "could not remove write access on $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/"
 fi
 
-# Report sha256sum of transferred data to support integrity check after the transfer.
-sha256sum $try_file.$pushed_file_suffix|awk '{print $1}'
+# uncomment next line to teport sha256sum of transferred data to support integrity check after the transfer.
+# sha256sum $try_file.$pushed_file_suffix|awk '{print $1}'
