@@ -27,10 +27,10 @@
 # To set reporting sha256sum of transferred data on success, uncomment last line.
 
 # Data on standard input shall practically be tarred and gzipped.
-# To represent different pushed data, change $push_file_suffix below.
+# To represent different pushed data, change $pushed_file_suffix below.
 
 # Requirements
-# 	locally: ssh client, please have a look at the usage examples.
+# 	locally: ssh client (see examples).
 # 	on target OS: bash, sha256sum 
 
 # Concurrency: safe for concurrent use.

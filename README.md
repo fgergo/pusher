@@ -27,10 +27,10 @@ where YYYY/MMDD/ represents the current date similar to the plan9 dump filesyste
 
 If ~/pushed/YYYY/MMDD/0/ already exists 1/1.tar.gz is created, if 1/ exists 2/2.tar.gz is created etc.
 
-Data on standard input shall practically be tarred and gzipped. To represent different data, change $push_file_suffix in push.sh.
+Data on standard input shall practically be tarred and gzipped. To represent different data, change $pushed_file_suffix in push.sh.
 
 ### Requirements
-Locally: locally: ssh client, please have a look at the usage examples.
+Locally: ssh client (see examples).
 
 On target OS: bash, sha256sum
 
