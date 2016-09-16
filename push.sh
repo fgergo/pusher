@@ -24,13 +24,13 @@
 # 1/1.tar.gz is created, if 1/ exists
 # 2/2.tar.gz is created etc.
 
-# On success sha256sum of transferred data is reported on stdout.
+# To set reporting sha256sum of transferred data on success, uncomment last line.
 
 # Data on standard input shall practically be tarred and gzipped.
 # To represent different pushed data, change $push_file_suffix below.
 
 # Requirements
-# 	locally: please have a look at the usage examples.
+# 	locally: ssh client, please have a look at the usage examples.
 # 	on target OS: bash, sha256sum 
 
 # Concurrency: safe for concurrent use.
@@ -129,5 +129,5 @@ if [ "$?" -ne "0" ]; then
 	die "could not remove write access on $pushed_home/$pushed_root/$yyyy/$mmdd/$try_file/"
 fi
 
-# uncomment next line to teport sha256sum of transferred data to support integrity check after the transfer.
+# Uncomment next line to teport sha256sum of transferred data to support integrity check after the transfer.
 # sha256sum $try_file.$pushed_file_suffix|awk '{print $1}'

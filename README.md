@@ -27,12 +27,10 @@ where YYYY/MMDD/ represents the current date similar to the plan9 dump filesyste
 
 If ~/pushed/YYYY/MMDD/0/ already exists 1/1.tar.gz is created, if 1/ exists 2/2.tar.gz is created etc.
 
-On success sha256sum of transferred data is reported on stdout.
-
 Data on standard input shall practically be tarred and gzipped. To represent different data, change $push_file_suffix in push.sh.
 
 ### Requirements
-Locally: please have a look at the usage examples above.
+Locally: locally: ssh client, please have a look at the usage examples.
 
 On target OS: bash, sha256sum
 
